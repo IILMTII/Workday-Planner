@@ -8,4 +8,13 @@ input{
 
 .table td{
     padding: 0px;
+    text-align: center;
+}
+
+.table th{
+    text-align: center;
+}
+
+textarea { 
+    resize:none; 
 }
