@@ -52,6 +52,12 @@ $(document).ready(function(){
         //     $('#comment'+i+'').val(localStorage.getItem("time"+i));
         // }
 
+        // Delete all entries
+        $('body').on('click','#deleteall', function(){
+            window.location.reload();
+            localStorage.clear();
+        });
+
         //Better time complexity, tedious. Individually save and display events.
         $('body').on('click','#save0', function(){
             localStorage.setItem("time0", $('#comment0').val());
