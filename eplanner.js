@@ -25,7 +25,7 @@ $(document).ready(function(){
             table_body +='</td>';
         
             table_body +='<td class="col-sm-1">';
-            table_body +='<i class="fa fa-save" id="save'+i+'" style="font-size:36px;"></i>';
+            table_body +='<button class="fa fa-save" id="save'+i+'" style="font-size:36px;"></button>';
             table_body +='</td>';
 
             table_body+='</tr>';
