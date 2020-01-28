@@ -11,6 +11,10 @@ input{
     text-align: center;  
 }
 
+.btn-info{
+    margin: 6px;
+}
+
 .table th{
     text-align: center;
 }

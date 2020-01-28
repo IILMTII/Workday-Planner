@@ -26,7 +26,7 @@ $(document).ready(function(){
             table_body +='</td>';
         
             table_body +='<td class="col-sm-1">';
-            table_body +='<button class="fa fa-save" id="save'+i+'" style="font-size:36px;"></button>';
+            table_body +='<button class="fa fa-save btn btn-info" id="save'+i+'" style="font-size:36px;"></button>';
             table_body +='</td>';
 
             table_body+='</tr>';
@@ -49,7 +49,7 @@ $(document).ready(function(){
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('red');
                 }
-                else{
+                if(moment().format('H') > i+9){
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('gray');
                 }
@@ -60,7 +60,7 @@ $(document).ready(function(){
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('red');
                 }
-                else{
+                if(moment().format('H') > i+9){
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('gray');
                 }
@@ -71,7 +71,7 @@ $(document).ready(function(){
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('red');
                 }
-                else if(moment().format('h')  timer){
+                if(moment().format('H') > i+9){
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('gray');
                 }
