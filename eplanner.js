@@ -2,10 +2,11 @@
 const time = moment().format('dddd, MMMM Do YYYY');
 
 var table_body;
+var timer;
 
 
 $(document).ready(function(){
-    for(var i=0;i<9;i++){
+        for(var i=0;i<9;i++){
         
             table_body+='<tr class="d-flex">';
         
@@ -31,6 +32,29 @@ $(document).ready(function(){
             table_body+='</tr>';
 
         }
+
+        for(var i=0;i<9;i++){
+            if (i<3){
+                timer = i+9+' am';
+                if(moment().format('h a') == timer){
+                    console.log(timer);
+                    $('#comment'+i+'').addClass('selected');
+                }
+            }else if (i===3){
+                timer = '12 pm';
+                if(moment().format('h a') == timer){
+                    console.log(timer);
+                    $('#comment'+i+'').addClass('selected');
+                }
+            }else{
+                timer = i-3+' pm';
+                if(moment().format('h a') == timer){
+                    console.log(timer);
+                    $('#comment'+i+'').addClass('selected');
+                }
+            }
+        }
+
         $('tbody').append(table_body);
 
         for(var i=0;i<9;i++){
@@ -96,7 +120,6 @@ $(document).ready(function(){
         $('#comment6').val(localStorage.getItem("time6"));
         $('#comment7').val(localStorage.getItem("time7"));
         $('#comment8').val(localStorage.getItem("time8"));
-
 });
 
 $('#time').text(time);

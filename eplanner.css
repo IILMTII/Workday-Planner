@@ -22,3 +22,7 @@ textarea {
 .fa-save:hover{
     cursor: pointer;
 }
+
+.selected{
+    background-color: lightcoral;
+}
