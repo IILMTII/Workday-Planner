@@ -39,18 +39,58 @@ $(document).ready(function(){
             });
         }
 
-        // Solves storage issue but poor time complexity.
-        for(var i=0;i<9;i++){
-            $('body').on('click','#save'+i+'', function(){
-                for(var i=0;i<9;i++){
-                localStorage.setItem("time"+i, $('#comment'+i+'').val());
-                }
-            });
-        }
+        // Solves storage issue but poor time complexity, any save button saves all entries due to the 2-D matrix
+        // for(var i=0;i<9;i++){
+        //     $('body').on('click','#save'+i+'', function(){
+        //         for(var i=0;i<9;i++){
+        //         localStorage.setItem("time"+i, $('#comment'+i+'').val());
+        //         }
+        //     });
+        // }
 
-        for(var i=0;i<9;i++){   
-            $('#comment'+i+'').val(localStorage.getItem("time"+i));
-        }
+        // for(var i=0;i<9;i++){   
+        //     $('#comment'+i+'').val(localStorage.getItem("time"+i));
+        // }
+
+        //Better time complexity, tedious. Individually save and display events.
+        $('body').on('click','#save0', function(){
+            localStorage.setItem("time0", $('#comment0').val());
+        });
+        $('body').on('click','#save1', function(){
+            localStorage.setItem("time1", $('#comment1').val());
+        });
+        $('body').on('click','#save2', function(){
+            localStorage.setItem("time2", $('#comment2').val());
+        });
+        $('body').on('click','#save3', function(){
+            localStorage.setItem("time3", $('#comment3').val());
+        });
+        $('body').on('click','#save4', function(){
+            localStorage.setItem("time4", $('#comment4').val());
+        });
+        $('body').on('click','#save5', function(){
+            localStorage.setItem("time5", $('#comment5').val());
+        });
+        $('body').on('click','#save6', function(){
+            localStorage.setItem("time6", $('#comment6').val());
+        });
+        $('body').on('click','#save7', function(){
+            localStorage.setItem("time7", $('#comment7').val());
+        });
+        $('body').on('click','#save8', function(){
+            localStorage.setItem("time8", $('#comment8').val());
+        });
+
+        $('#comment0').val(localStorage.getItem("time0"));
+        $('#comment1').val(localStorage.getItem("time1"));
+        $('#comment2').val(localStorage.getItem("time2"));
+        $('#comment3').val(localStorage.getItem("time3"));
+        $('#comment4').val(localStorage.getItem("time4"));
+        $('#comment5').val(localStorage.getItem("time5"));
+        $('#comment6').val(localStorage.getItem("time6"));
+        $('#comment7').val(localStorage.getItem("time7"));
+        $('#comment8').val(localStorage.getItem("time8"));
+
 });
 
 $('#time').text(time);
