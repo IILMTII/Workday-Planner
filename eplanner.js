@@ -71,7 +71,7 @@ $(document).ready(function(){
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('red');
                 }
-                else if(moment().format('h') == timer){
+                else if(moment().format('h')  timer){
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('gray');
                 }
