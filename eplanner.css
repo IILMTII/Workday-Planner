@@ -9,6 +9,7 @@ input{
 .table td{
     padding: 0px;
     text-align: center;  
+    line-height: 3.6;
 }
 
 .btn-info{
@@ -24,18 +25,22 @@ textarea {
     /* background-color: lightgreen; */
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
 .fa-save:hover{
     cursor: pointer;
 }
 
 .red{
-    background-color: lightcoral;
+    background-color: #ffcccc;
 }
 
 .green{
-    background-color: lightgreen;
+    background-color: #ccffcc;
 }
 
 .gray{
-    background-color: lightgray;
+    background-color: #cccccc;
 }
