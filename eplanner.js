@@ -22,7 +22,7 @@ $(document).ready(function(){
             table_body +='</td>';
         
             table_body +='<td class="col-sm-10">';
-            table_body +='<textarea class="form-control" rows="2" id="comment'+i+'"></textarea>';
+            table_body +='<textarea class="form-control green" rows="2" id="comment'+i+'"></textarea>';
             table_body +='</td>';
         
             table_body +='<td class="col-sm-1">';
@@ -32,35 +32,50 @@ $(document).ready(function(){
             table_body+='</tr>';
 
         }
-
-        for(var i=0;i<9;i++){
-            if (i<3){
-                timer = i+9+' am';
-                if(moment().format('h a') == timer){
-                    console.log(timer);
-                    $('#comment'+i+'').addClass('selected');
-                }
-            }else if (i===3){
-                timer = '12 pm';
-                if(moment().format('h a') == timer){
-                    console.log(timer);
-                    $('#comment'+i+'').addClass('selected');
-                }
-            }else{
-                timer = i-3+' pm';
-                if(moment().format('h a') == timer){
-                    console.log(timer);
-                    $('#comment'+i+'').addClass('selected');
-                }
-            }
-        }
-
+        
         $('tbody').append(table_body);
 
         for(var i=0;i<9;i++){
             $('body').on('keyup','#comment'+i+'', function(){
                 console.log(this.value); //feedback test 
             });
+        }
+        
+        for(var i=0;i<9;i++){
+            if (i<3){
+                timer = i+9;
+                if(moment().format('h') == timer){
+                    console.log(timer);
+                    $('#comment'+i+'').removeClass('green');
+                    $('#comment'+i+'').addClass('red');
+                }
+                // else if (moment().format('h') > i+9){
+                //     $('#comment'+i+'').removeClass('green');
+                //     $('#comment'+i+'').addClass('gray');
+                // }
+            }else if (i===3){
+                timer = 12;
+                if(moment().format('h') == timer){
+                    console.log(timer);
+                    $('#comment'+i+'').removeClass('green');
+                    $('#comment'+i+'').addClass('red');
+                }
+                // else if (moment().format('h') > i+9){
+                //     $('#comment'+i+'').removeClass('green');
+                //     $('#comment'+i+'').addClass('gray');
+                // }
+            }else if (i>3){
+                timer = i-3;
+                if(moment().format('h') == timer){
+                    console.log(timer);
+                    $('#comment'+i+'').removeClass('green');
+                    $('#comment'+i+'').addClass('red');
+                }
+                // else if (moment().format('h') > i+9){
+                //     $('#comment'+i+'').removeClass('green');
+                //     $('#comment'+i+'').addClass('gray');
+                // }
+            }
         }
 
         // Solves storage issue but poor time complexity, any save button saves all entries due to the 2-D matrix

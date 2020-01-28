@@ -17,12 +17,21 @@ input{
 
 textarea { 
     resize:none; 
+    /* background-color: lightgreen; */
 }
 
 .fa-save:hover{
     cursor: pointer;
 }
 
-.selected{
+.red{
     background-color: lightcoral;
+}
+
+.green{
+    background-color: lightgreen;
+}
+
+.gray{
+    background-color: lightgray;
 }
