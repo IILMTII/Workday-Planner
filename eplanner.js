@@ -49,10 +49,10 @@ $(document).ready(function(){
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('red');
                 }
-                // else if (moment().format('h') > i+9){
-                //     $('#comment'+i+'').removeClass('green');
-                //     $('#comment'+i+'').addClass('gray');
-                // }
+                else{
+                    $('#comment'+i+'').removeClass('green');
+                    $('#comment'+i+'').addClass('gray');
+                }
             }else if (i===3){
                 timer = 12;
                 if(moment().format('h') == timer){
@@ -60,10 +60,10 @@ $(document).ready(function(){
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('red');
                 }
-                // else if (moment().format('h') > i+9){
-                //     $('#comment'+i+'').removeClass('green');
-                //     $('#comment'+i+'').addClass('gray');
-                // }
+                else{
+                    $('#comment'+i+'').removeClass('green');
+                    $('#comment'+i+'').addClass('gray');
+                }
             }else if (i>3){
                 timer = i-3;
                 if(moment().format('h') == timer){
@@ -71,10 +71,10 @@ $(document).ready(function(){
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('red');
                 }
-                // else if (moment().format('h') > i+9){
-                //     $('#comment'+i+'').removeClass('green');
-                //     $('#comment'+i+'').addClass('gray');
-                // }
+                else if(moment().format('h') == timer){
+                    $('#comment'+i+'').removeClass('green');
+                    $('#comment'+i+'').addClass('gray');
+                }
             }
         }
 
