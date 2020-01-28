@@ -32,44 +32,26 @@ $(document).ready(function(){
 
         }
         $('tbody').append(table_body);
+
+        for(var i=0;i<9;i++){
+            $('body').on('keyup','#comment'+i+'', function(){
+                console.log(this.value); //feedback test 
+            });
+        }
+
+        // Solves storage issue but poor time complexity.
+        for(var i=0;i<9;i++){
+            $('body').on('click','#save'+i+'', function(){
+                for(var i=0;i<9;i++){
+                localStorage.setItem("time"+i, $('#comment'+i+'').val());
+                }
+            });
+        }
+
+        for(var i=0;i<9;i++){   
+            $('#comment'+i+'').val(localStorage.getItem("time"+i));
+        }
 });
 
 $('#time').text(time);
 
-// $("#comment").keyup(function() {
-//     console.log( this.value);
-// });
-
-// $("#comment0").keyup(function() {
-//     console.log( this.value);
-// });
-
-let storeComment = [];
-
-for(var i=0;i<9;i++){
-    $('body').on('keyup','#comment'+i+'', function(){
-        console.log(this.value);
-    });
-}
-
-for(var i=0;i<9;i++){
-    $('body').on('click','#save'+i+'', function(){
-        storeComment[i] = $('comment'+i+'').value;
-    });
-}
-
-listEl.addEventListener("click", function(event) {
-    event.preventDefault();
-    if(event.target.matches("button")) {
-      var item = document.createElement("div");
-      var parentID = event.target.parentElement.id
-      item.textContent = groceries[parentID];
-      shoppingCartEl.append(item);
-    }
-  });
-
-// $('body').on('keyup','#comment1', function(){
-//     console.log(this.value);
-// });
-
-// name.addEventListener('keyup', () => {console.log(name.value)});
