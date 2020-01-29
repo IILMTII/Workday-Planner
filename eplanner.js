@@ -43,8 +43,8 @@ $(document).ready(function(){
         
         for(var i=0;i<9;i++){
             if (i<3){
-                timer = i+9;
-                if(moment().format('h') == timer){
+                timer = i+9+' am';
+                if(moment().format('h a') == timer){
                     console.log(timer);
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('red');
@@ -54,8 +54,8 @@ $(document).ready(function(){
                     $('#comment'+i+'').addClass('gray');
                 }
             }else if (i===3){
-                timer = 12;
-                if(moment().format('h') == timer){
+                timer = 12+' pm';
+                if(moment().format('h a') == timer){
                     console.log(timer);
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('red');
@@ -65,8 +65,8 @@ $(document).ready(function(){
                     $('#comment'+i+'').addClass('gray');
                 }
             }else if (i>3){
-                timer = i-3;
-                if(moment().format('h') == timer){
+                timer = i-3+' pm';
+                if(moment().format('h a') == timer){
                     console.log(timer);
                     $('#comment'+i+'').removeClass('green');
                     $('#comment'+i+'').addClass('red');
